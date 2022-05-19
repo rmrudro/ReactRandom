@@ -1,23 +1,38 @@
+import { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
-
-function App() {
+import Person from './Person'
+const name = "Rifat"
+const App = () => {
+  const [counter, setCounter] = useState(0)
+  
+  // function DecreaseValue() {
+  //   setCounter  ({
+  //     prevcount => {
+  //       return (
+  //         prevcount - 1
+  //       )
+  //     }
+  //   }
+  //   )
+  // }
+  // function IncreaseValue(){
+  //   setCounter=>{prevcount=>{
+  //     return(
+  //       prevcount+1
+  //     )
+  //   }
+  //   }
+  // }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Person name={name} Lastname="Murtuza" age="29" />
+      <Person name={name} />
+      <div>
+        <button onClick={()=>setCounter(prevcount=>prevcount-1)}>-</button>
+        <h1>{counter}</h1>
+        <button onClick={()=>setCounter(prevcount=>prevcount+1)}>+</button>
+      </div>
     </div>
   );
 }
